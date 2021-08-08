@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/combine/npm/highlightjs@9.16.2,npm/jquery@3.4.1"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/highlightjs@9.16.2,npm/jquery@3.4.1,npm/jquery-address@1.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+      
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
+
+
+
+    </style>
+  </head>
+
+  
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html">  Varied  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-02">
+          Lab-02
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
+  </div>
+
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          
+            <a class="item"
+               href="/topic-01-simple/book-a/index.html">Lab-01 </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-02-varied/book-a/index.html">Lab-02 </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-02-varied/book-b/index.html">Lab-03 </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-a/index.html">Lab-04 </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-04-units/unit-1/book-a/index.html">Lab-05 </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-04-units/unit-2/book-a/index.html">Lab-06 </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-04-units/unit-3/book-a/index.html">Lab-07 </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-05-next/book-a/index.html">Lab-01 </a>
+          
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-02">
+            <h1>Objectives</h1>
+<p>Another lab - summary here.</p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Text</h1>
+<p>It&#39;s very easy to make some words <strong>bold</strong> and other words <em>italic</em> with Markdown. You can even <a href="http://google.com">inset a link to Google</a></p>
+<h2>Lists</h2>
+<p>Sometimes you want numbered lists:</p>
+<ol>
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ol>
+<p>Sometimes you want bullet points:</p>
+<ul>
+<li>Start a line with a star</li>
+<li>Profit!</li>
+</ul>
+<p>Alternatively,</p>
+<ul>
+<li>Dashes work just as well</li>
+<li>And if you have sub points, put two spaces before the dash or star:<ul>
+<li>Like this</li>
+<li>And this</li>
+</ul>
+</li>
+</ul>
+<h2>Images</h2>
+<p>If you want a link to a local image, place the image in the <code>img</code> folder and then insert a link like this:</p>
+<p><img src="img/02.jpg" alt=""></p>
+<p>Alternatively you can directly link to images on the web:</p>
+<p><img src="https://octodex.github.com/images/yaktocat.png" alt="Image of Yaktocat"></p>
+<p>The above includes a title.</p>
+<h1>Structured documents</h1>
+<p>Sometimes it&#39;s useful to have different levels of headings to structure your documents. Start lines with a <code>#</code> to create headings. Multiple <code>##</code> in a row denote smaller heading sizes.</p>
+<h3>This is a third-tier heading</h3>
+<p>You can use one <code>#</code> all the way up to <code>######</code> six for different heading sizes.</p>
+<p>If you&#39;d like to quote someone, use the &gt; character before the line:</p>
+<blockquote>
+<p>Coffee. The finest organic suspension ever devised... I beat the Borg with it.
+- Captain Janeway</p>
+</blockquote>
+<p>There are many different ways to style code with GitHub&#39;s markdown. If you have inline code blocks, wrap them in backticks: <code>var example = true</code>.  If you&#39;ve got a longer block of code, you can indent with four spaces:</p>
+<pre><code>if (isAwesome){
+  return true
+}</code></pre>
+<p>GitHub also supports something called code fencing, which allows for multiple lines without indentation:</p>
+<pre><code>if (isAwesome){
+  return true
+}</code></pre>
+<p>And if you&#39;d like to use syntax highlighting, include the language:</p>
+<pre><code class="lang-javascript">if (isAwesome){
+  return true
+}</code></pre>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Tables, Lines and Images</h1>
+<p>Tables can look like this:</p>
+<table>
+<thead>
+<tr>
+<th>Head 1</th>
+<th>Head 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cell 1</td>
+<td>cell 2</td>
+</tr>
+<tr>
+<td>cell 3</td>
+<td>cell 4</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>A horizontal rules above and below</p>
+<hr>
+<p>Some more images:</p>
+<p><img src="img/01.jpg" alt=""></p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Links and Code Blocks</h1>
+<p>You can inert links in bullet points:</p>
+<ul>
+<li><a href="http://github.com">http://github.com</a></li>
+<li><a href="http://bitbucket.dom">http://bitbucket.dom</a></li>
+</ul>
+<p>You can also insert links to other steps:</p>
+<ul>
+<li><a href="#/01">Step 01</a></li>
+<li><a href="#/02">Step 02</a></li>
+<li><a href="#/03">Step 03</a></li>
+<li><a href="#/04">Step 04</a></li>
+</ul>
+<p>More Code Block examples</p>
+<pre><code>  publish(path, course) {
+    const basePath = &#39;../&#39; + path + &#39;/&#39; + this.folder;
+    futils.initEmptyPath(basePath);
+
+    this.resources = this.talks.concat(this.labs);
+    futils.copyFileToFolder(this.img, basePath);
+    futils.writeFile(basePath + &#39;/index.html&#39;, nunjucks.render(&#39;topic.html&#39;, this));
+
+    futils.writeFile(basePath + &#39;/ajaxlabel.html&#39;,
+        nunjucks.render(&#39;ajaxlabel.html&#39;,
+            { url: this.url.substring(5) + &#39;/&#39; + this.folder }));
+    futils.writeFile(basePath + &#39;/indexmoodle.html&#39;, nunjucks.render(&#39;indexmoodle.html&#39;, this));
+
+    console.log(this.title);
+    this.publishTalks(basePath);
+    this.publishLabs(basePath, course);
+  }</code></pre>
+<p>This was autodetected as javascript. This one is html:</p>
+<pre><code>&lt;div class=&quot;ui segment pushable&quot;&gt;
+  &lt;div class=&quot;ui inverted labeled icon left inline vertical sidebar menu&quot;&gt;
+    {% for resource in course.allLabs.resources %}
+      {% if resource.title == title %}
+        &lt;a class=&quot;active item&quot; href=&quot;../../{{resource.parentFolder}}/{{resource.folder}}/{{resource.link}}&quot;&gt;
+          {{resource.title}}
+        &lt;/a&gt;
+      {% else %}
+        &lt;a class=&quot;item&quot; href=&quot;../../{{resource.parentFolder}}/{{resource.folder}}/{{resource.link}}&quot;&gt;
+          {{resource.title}}
+        &lt;/a&gt;
+      {% endif %}
+    {% endfor %}
+  &lt;/div&gt;
+  &lt;div class=&quot;pusher&quot;&gt;
+    &lt;div class=&quot;ui basic segment&quot;&gt;
+      &lt;br&gt;
+      {% for chapter in chapters %}
+      &lt;div  class=&quot;ui tab segment lab&quot; data-tab=&quot;{{chapter.shortTitle}}&quot;&gt;
+        {{ chapter.content }}
+      &lt;/div&gt;
+     {% endfor %}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Images</h1>
+<p>Image without a title:</p>
+<p><img src="img/04.jpg" alt=""></p>
+<p>Image with a title:</p>
+<p><img src="img/03.jpg" alt="This is a Stone Arch"></p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises &amp; Archives</h1>
+<p>You can link to zipped archives:</p>
+<ul>
+<li><a href="./archives/archive.zip">Solutions</a></li>
+</ul>
+<p>This archive must be placed in the <code>archives</code> folder as shown above.</p>
+<h2>Exercise 1:</h2>
+<p>Instructions for exercise 1.</p>
+<h2>Exercise 2:</h2>
+<p>Instructions for exercise 2.</p>
+<h2>Exercise 3:</h2>
+<p>Instructions for exercise 3.</p>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <script>
+    $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+    $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+  </script>
+
+
+
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right small menu">
+      <div class="ui tiny basic message segment">
+         Powered by <a href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a> 
+      </div>
+    </div>
+  </div>
+
+  </body>
+
+</html>
